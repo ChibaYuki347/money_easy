@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="" method="post">{% csrf_token %}
+        <p>支払い項目:{{ form.title }}</p>
+        <p>支払い先：{{ form.payfor }}</p>
+        <p>金額：{{ form.money }}</p>
+        <p>利率：{{ form.rate }}</p>
+        <p>優先度：{{ form.priority }}</p>
+        <p>期日:{{ form.duedate }}</p>
+        <p>期日:{{ form.memo }}</p>
+    <input type="submit" value="更新する">
+    </form>
+{% endblock %}

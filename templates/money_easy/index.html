@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Money Easy</h1>
+    <p class="lead">お金の悩みから解放されて生活に安心を与えよう！</p>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+
+{% for item in object_list %}
+  <div class="alert alert-secondary" role="alert">
+      <p>{{ item.name }}</p>
+  <a href="#" class="btn btn-info btn" tabindex="-1" role="button" aria-disabled="true">編集</a>
+<a href="#" class="btn btn-primary btn" tabindex="-1" role="button" aria-disabled="true">削除</a>
+<a href="#" class="btn btn-success btn" tabindex="-1" role="button" aria-disabled="true">詳細</a>
+</div>
+{% endfor %}
+</p><a href="{% url 'money_easy:pay_for_list' %}">支払い先リスト一覧へ</a></p>
+<p><a href="{% url 'money_easy:pay_item_list' %}">支払い項目リスト一覧へ</a></p>
+<p><a href="{% url 'money_easy:pay_for_create' %}">支払い先を作成する</a></p>
+<p><a href="{% url 'money_easy:pay_item_create' %}">支払い項目を作成する</a></p>
+{% endblock %}

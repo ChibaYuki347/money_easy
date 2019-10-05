@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="alert alert-primary" role="alert">
+ {{ object.name }}
+</div><div class="alert alert-primary" role="alert">
+ {{ object.descriotion|default:"この支払先に対する説明はありません。" }}
+</div>
+
+{% endblock %}
